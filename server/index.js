@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:5174",
+    origin: "https://mern-auth-client-drab.vercel.app/",
   })
 );
 

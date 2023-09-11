@@ -9,7 +9,7 @@ import AccountPage from "./pages/AccountPage";
 
 import { Toaster } from "react-hot-toast";
 
-axios.defaults.baseURL = "http://localhost:4000";
+axios.defaults.baseURL = "mern-auth-alpha.vercel.app";
 axios.defaults.withCredentials = true;
 
 const App = () => {
