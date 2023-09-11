@@ -91,6 +91,10 @@ app.post('/logout', (req, res) => {
 })
 
 
+app.get('/', (req, res) => {
+  res.json('server is running')
+})
+
 const port = 4000;
 
 app.listen(port, () => console.log(`server is running on port ${port}`));
