@@ -8,7 +8,7 @@ import { UserContextProvider } from "./UserContext";
 import AccountPage from "./pages/AccountPage";
 import { Toaster } from "react-hot-toast";
 
-axios.defaults.baseURL = "https://mern-auth-alpha.vercel.app/";
+axios.defaults.baseURL = "https://mern-auth-alpha.vercel.app";
 axios.defaults.withCredentials = true;
 
 const App = () => {

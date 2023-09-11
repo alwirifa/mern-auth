@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: "https://mern-auth-alwi.vercel.app/",
+    origin: "https://mern-auth-alwi.vercel.app",
   })
 );
 
