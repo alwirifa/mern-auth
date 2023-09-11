@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use(
   cors({
     credentials: true,
-    origin: "https://mern-auth-client-drab.vercel.app",
+    origin: "https://mern-auth-alwi.vercel.app/",
   })
 );
 
@@ -46,8 +46,6 @@ app.post("/register", async (req, res) => {
   }
 });
 
-
-
 app.get("/", (req, res) => {
   res.status(200).json({ message: "Hello from server" });
 });
@@ -62,7 +60,7 @@ app.post("/login", async (req, res) => {
         {
           email: userDoc.email,
           id: userDoc._id,
-          name: userDoc.name
+          name: userDoc.name,
         },
         jwtSecret,
         {},
@@ -84,19 +82,17 @@ app.get("/profile", (req, res) => {
   if (token) {
     jwt.verify(token, jwtSecret, {}, async (err, userData) => {
       if (err) throw err;
-      const {name, email, _id} = await User.findById(userData.id)
-      res.json({name, email, _id});
+      const { name, email, _id } = await User.findById(userData.id);
+      res.json({ name, email, _id });
     });
   } else {
     res.json(null);
   }
 });
 
-app.post('/logout', (req, res) => {
-  res.cookie('token', '').json(true)
-})
-
-
+app.post("/logout", (req, res) => {
+  res.cookie("token", "").json(true);
+});
 
 const port = 4000;
 
