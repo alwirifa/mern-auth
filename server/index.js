@@ -46,6 +46,12 @@ app.post("/register", async (req, res) => {
   }
 });
 
+
+
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Hello from server" });
+});
+
 app.post("/login", async (req, res) => {
   const { email, password } = req.body;
   const userDoc = await User.findOne({ email });
@@ -91,9 +97,6 @@ app.post('/logout', (req, res) => {
 })
 
 
-app.get('/', (req, res) => {
-  res.json('server is running')
-})
 
 const port = 4000;
 
